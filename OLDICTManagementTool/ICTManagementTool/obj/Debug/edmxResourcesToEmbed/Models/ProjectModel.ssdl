@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICTProjectsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="235" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="personID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="25" />
+    <Property Name="firstName" Type="nvarchar(max)" />
+    <Property Name="lastName" Type="nvarchar(max)" />
+    <Property Name="AccountAccepted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="int" Nullable="false" />
+    <Property Name="companyName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseID" />
+    </Key>
+    <Property Name="courseID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="courseName" Type="varchar" MaxLength="150" />
+    <Property Name="courseCode" Type="varchar" MaxLength="10" />
+    <Property Name="courseAbbreviation" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="PeopleComments">
+    <Key>
+      <PropertyRef Name="commentID" />
+    </Key>
+    <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personID" Type="int" Nullable="false" />
+    <Property Name="commentDate" Type="datetime" Nullable="false" />
+    <Property Name="commentPersonID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="flag" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PeopleContacts">
+    <Key>
+      <PropertyRef Name="personID" />
+      <PropertyRef Name="contactMethod" />
+      <PropertyRef Name="contactValue" />
+    </Key>
+    <Property Name="personID" Type="int" Nullable="false" />
+    <Property Name="contactMethod" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="contactValue" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="preferred" Type="bit" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="dateEnded" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PlanCourses">
+    <Key>
+      <PropertyRef Name="planId" />
+      <PropertyRef Name="courseId" />
+    </Key>
+    <Property Name="planId" Type="int" Nullable="false" />
+    <Property Name="courseId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="temp" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="planId" />
+    </Key>
+    <Property Name="planId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="planName" Type="varchar" MaxLength="100" />
+    <Property Name="planCode" Type="varchar" MaxLength="15" />
+    <Property Name="durationYears" Type="int" />
+    <Property Name="projectDuration" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriorityProjects">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="dateCreated" />
+    </Key>
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="priorityLevel" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="priorityReason" Type="varchar" MaxLength="500" />
+    <Property Name="priorityCreatorID" Type="int" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueStrings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueBinary" Type="varbinary(max)" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="programCode" />
+    </Key>
+    <Property Name="programCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="programDescription" Type="varchar" MaxLength="100" />
+    <Property Name="programDirectorName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProjectDocuments">
+    <Key>
+      <PropertyRef Name="projectDocumentID" />
+    </Key>
+    <Property Name="projectDocumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="documentSource" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="documentLink" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="documentTitle" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="filePath" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ProjectEfforts">
+    <Key>
+      <PropertyRef Name="effortID" />
+    </Key>
+    <Property Name="effortID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="effortDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="effortRankValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectEffortsApplied">
+    <Key>
+      <PropertyRef Name="projectEffortsAppliedID" />
+    </Key>
+    <Property Name="projectEffortsAppliedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="effortID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="100" />
+    <Property Name="hours" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectMethods">
+    <Key>
+      <PropertyRef Name="methodID" />
+    </Key>
+    <Property Name="methodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="methodDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="otherDetailFlag" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMethodsApplied">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="methodID" />
+    </Key>
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="methodID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProjectPeopleAllocations">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="personID" />
+      <PropertyRef Name="personRole" />
+    </Key>
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="personID" Type="int" Nullable="false" />
+    <Property Name="personRole" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="creatorID" Type="int" Nullable="false" />
+    <Property Name="creatorComment" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="projectID" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="projectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectCode" Type="varchar" MaxLength="15" />
+    <Property Name="projectTitle" Type="varchar" MaxLength="250" />
+    <Property Name="projectScope" Type="varchar(max)" />
+    <Property Name="projectOutcomes" Type="varchar(max)" />
+    <Property Name="projectDuration" Type="int" Nullable="false" />
+    <Property Name="projectPlacementRequirements" Type="varchar" MaxLength="500" />
+    <Property Name="projectSponsorAgreement" Type="bit" Nullable="false" />
+    <Property Name="projectStatus" Type="int" Nullable="false" />
+    <Property Name="projectStatusComment" Type="varchar" MaxLength="500" />
+    <Property Name="projectStatusChangeDate" Type="datetime" />
+    <Property Name="projectSemester" Type="char" MaxLength="3" />
+    <Property Name="projectSemesterCode" Type="varchar" MaxLength="10" />
+    <Property Name="projectYear" Type="int" Nullable="false" />
+    <Property Name="projectSequenceNo" Type="int" />
+    <Property Name="honoursUndergrad" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="requirementsMet" Type="bit" Nullable="false" />
+    <Property Name="projectCreatorID" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="projectEffortRequirements" Type="char" MaxLength="10" />
+    <Property Name="austCitizenOnly" Type="bit" Nullable="false" />
+    <Property Name="studentsReq" Type="int" Nullable="false" />
+    <Property Name="scholarshipAmt" Type="int" />
+    <Property Name="scholarshipDetail" Type="varchar(max)" />
+    <Property Name="staffEmailSentDate" Type="datetime" />
+    <Property Name="clientEmailSentDate" Type="datetime" />
+    <Property Name="studentEmailSentDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProjectStatus">
+    <Key>
+      <PropertyRef Name="ProjectStatusId" />
+    </Key>
+    <Property Name="ProjectStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="StatusDescription" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="staffID" />
+    </Key>
+    <Property Name="staffID" Type="int" Nullable="false" />
+    <Property Name="uniStaffID" Type="varchar" MaxLength="12" />
+    <Property Name="username" Type="varchar" MaxLength="12" />
+    <Property Name="dateEnded" Type="date" />
+  </EntityType>
+  <EntityType Name="StudentCourses">
+    <Key>
+      <PropertyRef Name="studentCourseID" />
+    </Key>
+    <Property Name="studentCourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="courseID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="semester" Type="varchar" MaxLength="5" />
+    <Property Name="year" Type="int" />
+    <Property Name="grade" Type="varchar" MaxLength="5" />
+    <Property Name="mark" Type="decimal" Precision="4" Scale="1" />
+  </EntityType>
+  <EntityType Name="StudentProjectRanking">
+    <Key>
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="projectID" />
+    </Key>
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="projectRank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="planId" Type="int" Nullable="false" />
+    <Property Name="uniUserName" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="uniStudentID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="gpa" Type="decimal" Precision="3" Scale="2" />
+    <Property Name="genderCode" Type="varchar" MaxLength="5" />
+    <Property Name="international" Type="varchar" MaxLength="5" />
+    <Property Name="externalStudent" Type="bit" Nullable="false" />
+    <Property Name="studentEmail" Type="varchar" MaxLength="100" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="semester" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="dateEnded" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_clientID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_clientID" />-->
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_PeopleComments_People' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_PeopleComments_People" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_PeopleComments_People1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_PeopleComments_People1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_PeopleContacts_People' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_PeopleContacts_People" />-->
+  <Association Name="FK_PlanCourses_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="PlanCourses" Type="Self.PlanCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="PlanCourses">
+        <PropertyRef Name="courseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanCourses_Plans">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="1" />
+    <End Role="PlanCourses" Type="Self.PlanCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="PlanCourses">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_planId">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriorityProjects_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="PriorityProjects" Type="Self.PriorityProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="PriorityProjects">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_projectCreatorID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_projectCreatorID" />-->
+  <Association Name="FK_ProjectEffortsApplied_ProjectMethods">
+    <End Role="ProjectEfforts" Type="Self.ProjectEfforts" Multiplicity="1" />
+    <End Role="ProjectEffortsApplied" Type="Self.ProjectEffortsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectEfforts">
+        <PropertyRef Name="effortID" />
+      </Principal>
+      <Dependent Role="ProjectEffortsApplied">
+        <PropertyRef Name="effortID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectEffortsApplied_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectEffortsApplied" Type="Self.ProjectEffortsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectEffortsApplied">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMethodsApplied_ProjectMethods">
+    <End Role="ProjectMethods" Type="Self.ProjectMethods" Multiplicity="1" />
+    <End Role="ProjectMethodsApplied" Type="Self.ProjectMethodsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMethods">
+        <PropertyRef Name="methodID" />
+      </Principal>
+      <Dependent Role="ProjectMethodsApplied">
+        <PropertyRef Name="methodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMethodsApplied_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectMethodsApplied" Type="Self.ProjectMethodsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectMethodsApplied">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_ProjectPeopleAllocations_People' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_ProjectPeopleAllocations_People" />-->
+  <Association Name="FK_ProjectPeopleAllocations_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProjectPeopleAllocations" Type="Self.ProjectPeopleAllocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectPeopleAllocations">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_ProjectDocuments">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectDocuments" Type="Self.ProjectDocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectDocuments">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_ProjectStatus">
+    <End Role="ProjectStatus" Type="Self.ProjectStatus" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectStatus">
+        <PropertyRef Name="ProjectStatusId" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="projectStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_projectsCreatorID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_projectsCreatorID" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_staffID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_staffID" />-->
+  <Association Name="FK_StudentCourses_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StudentCourses" Type="Self.StudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="StudentCourses">
+        <PropertyRef Name="courseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentCourses_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StudentCourses" Type="Self.StudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StudentCourses">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_studentID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_studentID" />-->
+  <Association Name="FK_StudentProjectRanking_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="StudentProjectRanking" Type="Self.StudentProjectRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="StudentProjectRanking">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentProjectRanking_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="StudentProjectRanking" Type="Self.StudentProjectRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StudentProjectRanking">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Memberships" Type="Self.Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Memberships" Type="Self.Memberships" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfileEntity_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleEntity_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="User_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_Role">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ICTProjectsModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Memberships" EntityType="Self.Memberships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PeopleComments" EntityType="Self.PeopleComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PeopleContacts" EntityType="Self.PeopleContacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanCourses" EntityType="Self.PlanCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PriorityProjects" EntityType="Self.PriorityProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectDocuments" EntityType="Self.ProjectDocuments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectEfforts" EntityType="Self.ProjectEfforts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectEffortsApplied" EntityType="Self.ProjectEffortsApplied" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectMethods" EntityType="Self.ProjectMethods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectMethodsApplied" EntityType="Self.ProjectMethodsApplied" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectPeopleAllocations" EntityType="Self.ProjectPeopleAllocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectStatus" EntityType="Self.ProjectStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentCourses" EntityType="Self.StudentCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentProjectRanking" EntityType="Self.StudentProjectRanking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersInRoles" EntityType="Self.UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanCourses_Course" Association="Self.FK_PlanCourses_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="PlanCourses" EntitySet="PlanCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanCourses_Plans" Association="Self.FK_PlanCourses_Plans">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="PlanCourses" EntitySet="PlanCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_planId" Association="Self.FK_planId">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriorityProjects_Projects" Association="Self.FK_PriorityProjects_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="PriorityProjects" EntitySet="PriorityProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectEffortsApplied_ProjectMethods" Association="Self.FK_ProjectEffortsApplied_ProjectMethods">
+      <End Role="ProjectEfforts" EntitySet="ProjectEfforts" />
+      <End Role="ProjectEffortsApplied" EntitySet="ProjectEffortsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectEffortsApplied_Projects" Association="Self.FK_ProjectEffortsApplied_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectEffortsApplied" EntitySet="ProjectEffortsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMethodsApplied_ProjectMethods" Association="Self.FK_ProjectMethodsApplied_ProjectMethods">
+      <End Role="ProjectMethods" EntitySet="ProjectMethods" />
+      <End Role="ProjectMethodsApplied" EntitySet="ProjectMethodsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMethodsApplied_Projects" Association="Self.FK_ProjectMethodsApplied_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectMethodsApplied" EntitySet="ProjectMethodsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectPeopleAllocations_Projects" Association="Self.FK_ProjectPeopleAllocations_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectPeopleAllocations" EntitySet="ProjectPeopleAllocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_ProjectDocuments" Association="Self.FK_Projects_ProjectDocuments">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectDocuments" EntitySet="ProjectDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_ProjectStatus" Association="Self.FK_Projects_ProjectStatus">
+      <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentCourses_Course" Association="Self.FK_StudentCourses_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="StudentCourses" EntitySet="StudentCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentCourses_Students" Association="Self.FK_StudentCourses_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentCourses" EntitySet="StudentCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProjectRanking_Projects" Association="Self.FK_StudentProjectRanking_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="StudentProjectRanking" EntitySet="StudentProjectRanking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProjectRanking_Students" Association="Self.FK_StudentProjectRanking_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentProjectRanking" EntitySet="StudentProjectRanking" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_Application" Association="Self.MembershipEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_User" Association="Self.MembershipEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="ProfileEntity_User" Association="Self.ProfileEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="RoleEntity_Application" Association="Self.RoleEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="User_Application" Association="Self.User_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_Role" Association="Self.UsersInRole_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_User" Association="Self.UsersInRole_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

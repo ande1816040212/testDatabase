@@ -1,0 +1,240 @@
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\ICTManagementTool.dll.config
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\ICTManagementTool.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\ICTManagementTool.pdb
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Antlr3.Runtime.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\AspNet.ScriptManager.bootstrap.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\AspNet.ScriptManager.jQuery.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\DocumentFormat.OpenXml.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\EntityFramework.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\EntityFramework.SqlServer.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Google.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.ScriptManager.WebForms.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Web.Infrastructure.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Newtonsoft.Json.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Owin.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Net.Http.Formatting.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Helpers.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Http.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Http.WebHost.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Mvc.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Optimization.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Providers.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Razor.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.Deployment.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.Razor.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\WebGrease.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Antlr3.Runtime.pdb
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\EntityFramework.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\EntityFramework.SqlServer.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.Google.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Newtonsoft.Json.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Net.Http.Formatting.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Http.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Http.WebHost.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Providers.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Optimization.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Razor.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.Deployment.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Webpages.Razor.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Helpers.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\bin\System.Web.Mvc.xml
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.Migrations.Migration1.resources
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.GenerateResource.Cache
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CoreCompileInputs.cache
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.dll
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.pdb
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.csprojAssemblyReference.cache
+C:\ICT Project Allocation Tool\ICTManagementToolContinuation\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CopyComplete
+C:\proj\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.dll.config
+C:\proj\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.pdb
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Antlr3.Runtime.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\AspNet.ScriptManager.bootstrap.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\AspNet.ScriptManager.jQuery.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\DocumentFormat.OpenXml.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\EntityFramework.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\EntityFramework.SqlServer.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Google.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.ScriptManager.WebForms.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Web.Infrastructure.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Newtonsoft.Json.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Owin.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Net.Http.Formatting.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Helpers.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.WebHost.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Mvc.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Optimization.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Providers.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Razor.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Deployment.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Razor.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\WebGrease.dll
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Antlr3.Runtime.pdb
+C:\proj\ICTManagementTool\ICTManagementTool\bin\EntityFramework.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\EntityFramework.SqlServer.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Google.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Newtonsoft.Json.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Net.Http.Formatting.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.WebHost.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Providers.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Optimization.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Razor.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Deployment.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Razor.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Helpers.xml
+C:\proj\ICTManagementTool\ICTManagementTool\bin\System.Web.Mvc.xml
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csprojAssemblyReference.cache
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.Migrations.Migration1.resources
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.GenerateResource.cache
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CoreCompileInputs.cache
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CopyComplete
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.dll
+C:\proj\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.pdb
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.dll.config
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\ICTManagementTool.pdb
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Antlr3.Runtime.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\AspNet.ScriptManager.jQuery.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\DocumentFormat.OpenXml.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\EntityFramework.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\EntityFramework.SqlServer.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Google.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Web.Infrastructure.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Newtonsoft.Json.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Owin.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Net.Http.Formatting.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Helpers.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.WebHost.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Mvc.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Optimization.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Providers.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Razor.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Deployment.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Razor.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\WebGrease.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Antlr3.Runtime.pdb
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\EntityFramework.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\EntityFramework.SqlServer.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Logging.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.Google.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Newtonsoft.Json.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Net.Http.Formatting.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Http.WebHost.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Providers.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Optimization.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Razor.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Deployment.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Webpages.Razor.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Helpers.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\bin\System.Web.Mvc.xml
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.Migrations.Migration1.resources
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.GenerateResource.cache
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CoreCompileInputs.cache
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.CopyComplete
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.dll
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.pdb
+C:\Workspaces\ICT\ICTManagementTool\ICTManagementTool\obj\Debug\ICTManagementTool.csproj.AssemblyReference.cache

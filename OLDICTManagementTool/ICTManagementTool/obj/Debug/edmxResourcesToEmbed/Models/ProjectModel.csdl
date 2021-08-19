@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICTProjectsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ICTProjectsModel.AspNetUserRoles1" FromRole="AspNetRoles" ToRole="AspNetUsers" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="personID" Type="Int32" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="AspNetRoles" Relationship="ICTProjectsModel.AspNetUserRoles1" FromRole="AspNetUsers" ToRole="AspNetRoles" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="AccountAccepted" Type="Boolean" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="Int32" Nullable="false" />
+    <Property Name="companyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PeopleComments">
+    <Key>
+      <PropertyRef Name="commentID" />
+    </Key>
+    <Property Name="commentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="personID" Type="Int32" Nullable="false" />
+    <Property Name="commentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="commentPersonID" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="flag" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PeopleContacts">
+    <Key>
+      <PropertyRef Name="personID" />
+      <PropertyRef Name="contactMethod" />
+      <PropertyRef Name="contactValue" />
+    </Key>
+    <Property Name="personID" Type="Int32" Nullable="false" />
+    <Property Name="contactMethod" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contactValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="preferred" Type="Boolean" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateEnded" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PriorityProjects">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="dateCreated" />
+    </Key>
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="priorityLevel" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="priorityReason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="priorityCreatorID" Type="Int32" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_PriorityProjects_Projects" FromRole="PriorityProjects" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="programCode" />
+    </Key>
+    <Property Name="programCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="programDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="programDirectorName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProjectDocuments">
+    <Key>
+      <PropertyRef Name="projectDocumentID" />
+    </Key>
+    <Property Name="projectDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="documentLink" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="documentTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_ProjectDocuments" FromRole="ProjectDocuments" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="filePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentSource" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProjectMethods">
+    <Key>
+      <PropertyRef Name="methodID" />
+    </Key>
+    <Property Name="methodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="methodDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="otherDetailFlag" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ProjectMethodsApplied" Relationship="Self.FK_ProjectMethodsApplied_ProjectMethods" FromRole="ProjectMethods" ToRole="ProjectMethodsApplied" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="ProjectMethodsApplied">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="methodID" />
+    </Key>
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="methodID" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectMethods" Relationship="Self.FK_ProjectMethodsApplied_ProjectMethods" FromRole="ProjectMethodsApplied" ToRole="ProjectMethods" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_ProjectMethodsApplied_Projects" FromRole="ProjectMethodsApplied" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="ProjectPeopleAllocations">
+    <Key>
+      <PropertyRef Name="projectID" />
+      <PropertyRef Name="personID" />
+      <PropertyRef Name="personRole" />
+    </Key>
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="personID" Type="Int32" Nullable="false" />
+    <Property Name="personRole" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="creatorID" Type="Int32" Nullable="false" />
+    <Property Name="creatorComment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_ProjectPeopleAllocations_Projects" FromRole="ProjectPeopleAllocations" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="projectID" />
+    </Key>
+    <Property Name="projectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="projectScope" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="projectOutcomes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="projectDuration" Type="Int32" Nullable="false" DefaultValue="4" />
+    <Property Name="projectPlacementRequirements" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="projectSponsorAgreement" Type="Boolean" Nullable="false" />
+    <Property Name="projectStatus" Type="Int32" Nullable="false" />
+    <Property Name="projectStatusComment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="projectStatusChangeDate" Type="DateTime" Precision="3" />
+    <Property Name="projectSemester" Type="String" MaxLength="3" FixedLength="true" Unicode="false" DefaultValue="SP2" />
+    <Property Name="projectSemesterCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="projectYear" Type="Int32" Nullable="false" />
+    <Property Name="projectSequenceNo" Type="Int32" />
+    <Property Name="honoursUndergrad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="requirementsMet" Type="Boolean" Nullable="false" />
+    <Property Name="projectCreatorID" Type="Int32" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PriorityProjects" Relationship="Self.FK_PriorityProjects_Projects" FromRole="Projects" ToRole="PriorityProjects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="ProjectDocuments" Relationship="Self.FK_Projects_ProjectDocuments" FromRole="Projects" ToRole="ProjectDocuments" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="ProjectMethodsApplied" Relationship="Self.FK_ProjectMethodsApplied_Projects" FromRole="Projects" ToRole="ProjectMethodsApplied" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="ProjectPeopleAllocations" Relationship="Self.FK_ProjectPeopleAllocations_Projects" FromRole="Projects" ToRole="ProjectPeopleAllocations" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="StudentProjectRanking" Relationship="Self.FK_StudentProjectRanking_Projects" FromRole="Projects" ToRole="StudentProjectRanking" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="projectEffortRequirements" Type="String" Unicode="false" FixedLength="true" MaxLength="10" />
+    <NavigationProperty Name="ProjectEffortsApplied" Relationship="ICTProjectsModel.FK_ProjectEffortsApplied_Projects" FromRole="Projects" ToRole="ProjectEffortsApplied" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProjectStatus1" Relationship="ICTProjectsModel.FK_Projects_ProjectStatus" FromRole="Projects" ToRole="ProjectStatus" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="projectCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="austCitizenOnly" Type="Boolean" Nullable="false" />
+    <Property Name="studentsReq" Type="Int32" Nullable="false" />
+    <Property Name="scholarshipAmt" Type="Int32" />
+    <Property Name="scholarshipDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="staffEmailSentDate" Type="DateTime" Precision="3" />
+    <Property Name="clientEmailSentDate" Type="DateTime" Precision="3" />
+    <Property Name="studentEmailSentDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="staffID" />
+    </Key>
+    <Property Name="staffID" Type="Int32" Nullable="false" />
+    <Property Name="uniStaffID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="dateEnded" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="StudentCourses">
+    <Key>
+      <PropertyRef Name="studentCourseID" />
+    </Key>
+    <Property Name="studentCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentID" Type="Int32" Nullable="false" />
+    <Property Name="courseID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="semester" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="grade" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="mark" Type="Decimal" Precision="4" Scale="1" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_StudentCourses_Students" FromRole="StudentCourses" ToRole="Students" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Course" Relationship="ICTProjectsModel.FK_StudentCourses_Course" FromRole="StudentCourses" ToRole="Course" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="StudentProjectRanking">
+    <Key>
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="projectID" />
+    </Key>
+    <Property Name="studentID" Type="Int32" Nullable="false" />
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="projectRank" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_StudentProjectRanking_Projects" FromRole="StudentProjectRanking" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_StudentProjectRanking_Students" FromRole="StudentProjectRanking" ToRole="Students" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="Int32" Nullable="false" />
+    <Property Name="uniUserName" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="uniStudentID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gpa" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <Property Name="semester" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="StudentCourses" Relationship="Self.FK_StudentCourses_Students" FromRole="Students" ToRole="StudentCourses" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="StudentProjectRanking" Relationship="Self.FK_StudentProjectRanking_Students" FromRole="Students" ToRole="StudentProjectRanking" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="dateEnded" Type="DateTime" Precision="0" />
+    <Property Name="planId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Plans" Relationship="ICTProjectsModel.FK_planId" FromRole="Students" ToRole="Plans" />
+    <NavigationProperty Name="Plans1" Relationship="ICTProjectsModel.FK_planId1" FromRole="Students" ToRole="Plans" />
+    <Property Name="genderCode" Type="String" Unicode="false" FixedLength="false" MaxLength="5" />
+    <Property Name="international" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="studentEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="externalStudent" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriorityProjects_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="PriorityProjects" Type="Self.PriorityProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="PriorityProjects">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_ProjectDocuments">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectDocuments" Type="Self.ProjectDocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectDocuments">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMethodsApplied_ProjectMethods">
+    <End Role="ProjectMethods" Type="Self.ProjectMethods" Multiplicity="1" />
+    <End Role="ProjectMethodsApplied" Type="Self.ProjectMethodsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMethods">
+        <PropertyRef Name="methodID" />
+      </Principal>
+      <Dependent Role="ProjectMethodsApplied">
+        <PropertyRef Name="methodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMethodsApplied_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectMethodsApplied" Type="Self.ProjectMethodsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectMethodsApplied">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectPeopleAllocations_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectPeopleAllocations" Type="Self.ProjectPeopleAllocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectPeopleAllocations">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentProjectRanking_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="StudentProjectRanking" Type="Self.StudentProjectRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="StudentProjectRanking">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentCourses_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="StudentCourses" Type="Self.StudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StudentCourses">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentProjectRanking_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="StudentProjectRanking" Type="Self.StudentProjectRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StudentProjectRanking">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ICTProjectsEntities" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="PeopleComments" EntityType="Self.PeopleComments" />
+    <EntitySet Name="PeopleContacts" EntityType="Self.PeopleContacts" />
+    <EntitySet Name="PriorityProjects" EntityType="Self.PriorityProjects" />
+    <EntitySet Name="Program" EntityType="Self.Program" />
+    <EntitySet Name="ProjectDocuments" EntityType="Self.ProjectDocuments" />
+    <EntitySet Name="ProjectMethods" EntityType="Self.ProjectMethods" />
+    <EntitySet Name="ProjectMethodsApplied" EntityType="Self.ProjectMethodsApplied" />
+    <EntitySet Name="ProjectPeopleAllocations" EntityType="Self.ProjectPeopleAllocations" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="StudentCourses" EntityType="Self.StudentCourses" />
+    <EntitySet Name="StudentProjectRanking" EntityType="Self.StudentProjectRanking" />
+    <EntitySet Name="Students" EntityType="Self.Students" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriorityProjects_Projects" Association="Self.FK_PriorityProjects_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="PriorityProjects" EntitySet="PriorityProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_ProjectDocuments" Association="Self.FK_Projects_ProjectDocuments">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectDocuments" EntitySet="ProjectDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMethodsApplied_ProjectMethods" Association="Self.FK_ProjectMethodsApplied_ProjectMethods">
+      <End Role="ProjectMethods" EntitySet="ProjectMethods" />
+      <End Role="ProjectMethodsApplied" EntitySet="ProjectMethodsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMethodsApplied_Projects" Association="Self.FK_ProjectMethodsApplied_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectMethodsApplied" EntitySet="ProjectMethodsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectPeopleAllocations_Projects" Association="Self.FK_ProjectPeopleAllocations_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectPeopleAllocations" EntitySet="ProjectPeopleAllocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProjectRanking_Projects" Association="Self.FK_StudentProjectRanking_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="StudentProjectRanking" EntitySet="StudentProjectRanking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentCourses_Students" Association="Self.FK_StudentCourses_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentCourses" EntitySet="StudentCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProjectRanking_Students" Association="Self.FK_StudentProjectRanking_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentProjectRanking" EntitySet="StudentProjectRanking" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+      <Parameter Name="version" Type="Int32" Mode="In" />
+      <Parameter Name="definition" Type="Binary" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+      <Parameter Name="version" Type="Int32" Mode="In" />
+      <Parameter Name="definition" Type="Binary" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ICTProjectsModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ICTProjectsModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Type="String" Mode="In" />
+      <Parameter Name="owner_id" Type="Int32" Mode="In" />
+      <Parameter Name="new_diagramname" Type="String" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="ProjectEfforts" EntityType="ICTProjectsModel.ProjectEfforts" />
+    <EntitySet Name="ProjectEffortsApplied" EntityType="ICTProjectsModel.ProjectEffortsApplied" />
+    <AssociationSet Name="FK_ProjectEffortsApplied_ProjectMethods" Association="ICTProjectsModel.FK_ProjectEffortsApplied_ProjectMethods">
+      <End Role="ProjectEfforts" EntitySet="ProjectEfforts" />
+      <End Role="ProjectEffortsApplied" EntitySet="ProjectEffortsApplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectEffortsApplied_Projects" Association="ICTProjectsModel.FK_ProjectEffortsApplied_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectEffortsApplied" EntitySet="ProjectEffortsApplied" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory1Set" EntityType="ICTProjectsModel.C__MigrationHistory1" />
+    <EntitySet Name="Applications" EntityType="ICTProjectsModel.Applications" />
+    <EntitySet Name="Memberships" EntityType="ICTProjectsModel.Memberships" />
+    <EntitySet Name="Profiles" EntityType="ICTProjectsModel.Profiles" />
+    <EntitySet Name="Roles" EntityType="ICTProjectsModel.Roles" />
+    <EntitySet Name="Users" EntityType="ICTProjectsModel.Users" />
+    <AssociationSet Name="MembershipEntity_Application" Association="ICTProjectsModel.MembershipEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="RoleEntity_Application" Association="ICTProjectsModel.RoleEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="User_Application" Association="ICTProjectsModel.User_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_User" Association="ICTProjectsModel.MembershipEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="ProfileEntity_User" Association="ICTProjectsModel.ProfileEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRoles" Association="ICTProjectsModel.UsersInRoles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles1" Association="ICTProjectsModel.AspNetUserRoles1">
+      <End EntitySet="AspNetRoles" Role="AspNetRoles" />
+      <End EntitySet="AspNetUsers" Role="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram1">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram1">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram1">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition1" ReturnType="Collection(ICTProjectsModel.sp_helpdiagramdefinition1_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams1" ReturnType="Collection(ICTProjectsModel.sp_helpdiagrams1_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram1">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams1" />
+    <EntitySet Name="ProjectStatus" EntityType="ICTProjectsModel.ProjectStatus" />
+    <AssociationSet Name="FK_Projects_ProjectStatus" Association="ICTProjectsModel.FK_Projects_ProjectStatus">
+      <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <EntitySet Name="Course" EntityType="ICTProjectsModel.Course" />
+    <AssociationSet Name="FK_StudentCourses_Course" Association="ICTProjectsModel.FK_StudentCourses_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="StudentCourses" EntitySet="StudentCourses" />
+    </AssociationSet>
+    <EntitySet Name="Plans" EntityType="ICTProjectsModel.Plans" />
+    <EntitySet Name="PlanCourses" EntityType="ICTProjectsModel.PlanCourses" />
+    <AssociationSet Name="FK_PlanCourses_Course" Association="ICTProjectsModel.FK_PlanCourses_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="PlanCourses" EntitySet="PlanCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanCourses_Plans" Association="ICTProjectsModel.FK_PlanCourses_Plans">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="PlanCourses" EntitySet="PlanCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_planId" Association="ICTProjectsModel.FK_planId">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_planId1" Association="ICTProjectsModel.FK_planId1">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ProjectEfforts">
+    <Key>
+      <PropertyRef Name="effortID" />
+    </Key>
+    <Property Name="effortID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="effortDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectEffortsApplied" Relationship="ICTProjectsModel.FK_ProjectEffortsApplied_ProjectMethods" FromRole="ProjectEfforts" ToRole="ProjectEffortsApplied" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="effortRankValue" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectEffortsApplied">
+    <Key>
+      <PropertyRef Name="projectEffortsAppliedID" />
+    </Key>
+    <Property Name="projectEffortsAppliedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectID" Type="Int32" Nullable="false" />
+    <Property Name="effortID" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="hours" Type="Int32" />
+    <NavigationProperty Name="ProjectEfforts" Relationship="ICTProjectsModel.FK_ProjectEffortsApplied_ProjectMethods" FromRole="ProjectEffortsApplied" ToRole="ProjectEfforts" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Projects" Relationship="ICTProjectsModel.FK_ProjectEffortsApplied_Projects" FromRole="ProjectEffortsApplied" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <Association Name="FK_ProjectEffortsApplied_ProjectMethods">
+    <End Type="ICTProjectsModel.ProjectEfforts" Role="ProjectEfforts" Multiplicity="1" />
+    <End Type="ICTProjectsModel.ProjectEffortsApplied" Role="ProjectEffortsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectEfforts">
+        <PropertyRef Name="effortID" />
+      </Principal>
+      <Dependent Role="ProjectEffortsApplied">
+        <PropertyRef Name="effortID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectEffortsApplied_Projects">
+    <End Type="ICTProjectsModel.Projects" Role="Projects" Multiplicity="1" />
+    <End Type="ICTProjectsModel.ProjectEffortsApplied" Role="ProjectEffortsApplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="projectID" />
+      </Principal>
+      <Dependent Role="ProjectEffortsApplied">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="C__MigrationHistory1">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Memberships" Relationship="ICTProjectsModel.MembershipEntity_Application" FromRole="Applications" ToRole="Memberships" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Roles" Relationship="ICTProjectsModel.RoleEntity_Application" FromRole="Applications" ToRole="Roles" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Users" Relationship="ICTProjectsModel.User_Application" FromRole="Applications" ToRole="Users" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Applications" Relationship="ICTProjectsModel.MembershipEntity_Application" FromRole="Memberships" ToRole="Applications" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Users" Relationship="ICTProjectsModel.MembershipEntity_User" FromRole="Memberships" ToRole="Users" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="ICTProjectsModel.ProfileEntity_User" FromRole="Profiles" ToRole="Users" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Applications" Relationship="ICTProjectsModel.RoleEntity_Application" FromRole="Roles" ToRole="Applications" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Users" Relationship="ICTProjectsModel.UsersInRoles" FromRole="Roles" ToRole="Users" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Applications" Relationship="ICTProjectsModel.User_Application" FromRole="Users" ToRole="Applications" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Memberships" Relationship="ICTProjectsModel.MembershipEntity_User" FromRole="Users" ToRole="Memberships" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Profiles" Relationship="ICTProjectsModel.ProfileEntity_User" FromRole="Users" ToRole="Profiles" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Roles" Relationship="ICTProjectsModel.UsersInRoles" FromRole="Users" ToRole="Roles" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <Association Name="MembershipEntity_Application">
+    <End Type="ICTProjectsModel.Applications" Role="Applications" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Memberships" Role="Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleEntity_Application">
+    <End Type="ICTProjectsModel.Applications" Role="Applications" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Roles" Role="Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="User_Application">
+    <End Type="ICTProjectsModel.Applications" Role="Applications" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Users" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_User">
+    <End Type="ICTProjectsModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Memberships" Role="Memberships" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfileEntity_User">
+    <End Type="ICTProjectsModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Profiles" Role="Profiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRoles">
+    <End Type="ICTProjectsModel.Roles" Role="Roles" Multiplicity="*" />
+    <End Type="ICTProjectsModel.Users" Role="Users" Multiplicity="*" />
+  </Association>
+  <Association Name="AspNetUserRoles1">
+    <End Type="ICTProjectsModel.AspNetRoles" Multiplicity="*" Role="AspNetRoles" />
+    <End Type="ICTProjectsModel.AspNetUsers" Multiplicity="*" Role="AspNetUsers" />
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition1_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams1_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ProjectStatus">
+    <Key>
+      <PropertyRef Name="ProjectStatusId" />
+    </Key>
+    <Property Name="ProjectStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="StatusDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Projects" Relationship="ICTProjectsModel.FK_Projects_ProjectStatus" FromRole="ProjectStatus" ToRole="Projects" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <Association Name="FK_Projects_ProjectStatus">
+    <End Type="ICTProjectsModel.ProjectStatus" Role="ProjectStatus" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Projects" Role="Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectStatus">
+        <PropertyRef Name="ProjectStatusId" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="projectStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseID" />
+    </Key>
+    <Property Name="courseID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="courseName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="courseCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StudentCourses" Relationship="ICTProjectsModel.FK_StudentCourses_Course" FromRole="Course" ToRole="StudentCourses" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="PlanCourses" Relationship="ICTProjectsModel.FK_PlanCourses_Course" FromRole="Course" ToRole="PlanCourses" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <Property Name="courseAbbreviation" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_StudentCourses_Course">
+    <End Type="ICTProjectsModel.Course" Role="Course" Multiplicity="1" />
+    <End Type="ICTProjectsModel.StudentCourses" Role="StudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="StudentCourses">
+        <PropertyRef Name="courseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="planId" />
+    </Key>
+    <Property Name="planId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="planName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="planCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="durationYears" Type="Int32" />
+    <NavigationProperty Name="PlanCourses" Relationship="ICTProjectsModel.FK_PlanCourses_Plans" FromRole="Plans" ToRole="PlanCourses" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Students" Relationship="ICTProjectsModel.FK_planId" FromRole="Plans" ToRole="Students" />
+    <NavigationProperty Name="Students1" Relationship="ICTProjectsModel.FK_planId1" FromRole="Plans" ToRole="Students" />
+    <Property Name="projectDuration" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanCourses">
+    <Key>
+      <PropertyRef Name="planId" />
+      <PropertyRef Name="courseId" />
+    </Key>
+    <Property Name="planId" Type="Int32" Nullable="false" />
+    <Property Name="courseId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="temp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Course" Relationship="ICTProjectsModel.FK_PlanCourses_Course" FromRole="PlanCourses" ToRole="Course" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+    <NavigationProperty Name="Plans" Relationship="ICTProjectsModel.FK_PlanCourses_Plans" FromRole="PlanCourses" ToRole="Plans" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+  </EntityType>
+  <Association Name="FK_PlanCourses_Course">
+    <End Type="ICTProjectsModel.Course" Role="Course" Multiplicity="1" />
+    <End Type="ICTProjectsModel.PlanCourses" Role="PlanCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="PlanCourses">
+        <PropertyRef Name="courseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanCourses_Plans">
+    <End Type="ICTProjectsModel.Plans" Role="Plans" Multiplicity="1" />
+    <End Type="ICTProjectsModel.PlanCourses" Role="PlanCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="PlanCourses">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_planId">
+    <End Type="ICTProjectsModel.Plans" Role="Plans" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Students" Role="Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_planId1">
+    <End Type="ICTProjectsModel.Plans" Role="Plans" Multiplicity="1" />
+    <End Type="ICTProjectsModel.Students" Role="Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
