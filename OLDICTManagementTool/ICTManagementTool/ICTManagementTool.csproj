@@ -775,11 +775,6 @@
     <Compile Include="Helpers\ExcelHelper.cs" />
     <Compile Include="Helpers\ProjectHelper.cs" />
     <Compile Include="Helpers\UserRoleHelper.cs" />
-    <Compile Include="Migrations\201704190939147_Migration1.cs" />
-    <Compile Include="Migrations\201704190939147_Migration1.Designer.cs">
-      <DependentUpon>201704190939147_Migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Applications.cs">
       <DependentUpon>ProjectModel.tt</DependentUpon>
     </Compile>
@@ -958,6 +953,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\ExcelDocuments\AddAccounts\" />
+    <Folder Include="App_Data\Old\" />
+    <Folder Include="Migrations\" />
     <Folder Include="ProjectFiles\" />
     <Folder Include="Projects\" />
     <Folder Include="Student\" />
@@ -968,11 +965,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704190939147_Migration1.resx">
-      <DependentUpon>201704190939147_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
